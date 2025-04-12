@@ -1,0 +1,223 @@
+html {
+    scroll-behavior: smooth; 
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  }
+  .back-video {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;  
+}
+
+.back-video::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.); 
+    z-index: 1; 
+}
+
+
+  @media (min-aspect-ratio: 16/9) {
+    .back-video {
+      width: 100%;
+      height: auto;
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .back-video {
+      width: auto;
+      height: 100%;
+    }
+  }
+h1 {
+    letter-spacing: 5px;
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-family: Times New Roman;
+}
+.head {
+    letter-spacing: 10px;
+    font-size: 110px;
+    text-align: center;
+    color: rgb(241, 237, 237);
+    text-shadow: 5px 2px 2px rgb(12, 12, 12);
+    font-weight: 600;
+}
+.description {
+    border-radius: 8px; 
+    padding: 3px 70px;
+    max-width: 500px;  
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(159, 212, 223, 0.7); 
+    border: 1px solid white;
+}
+.navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    overflow: auto;
+    display: inline-block;
+}
+.navbar a {
+    float: right;
+    padding: 25px 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    height: 20px;
+    font-family: Times New Roman;
+    transition: all opacity 1s;
+}
+.navbar a::after {
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    display: block;
+    margin: auto;
+}
+.navbar a:hover {
+    background: transparent;
+    background:rgba(159, 212, 223);
+    color: black;
+}
+.navbar h2 {
+    float: left;
+    color: white;
+    font-size: 20px;
+    margin-left: 130px;
+    font-family: Times New Roman;
+}
+.front {
+    position: absolute;
+    top: 38%;
+    left: 8%;
+    font-family: Times New Roman;
+}
+.slideshow-container {
+    position: relative;
+    max-width: 500px; 
+    margin-left: 60%; 
+    overflow: hidden;
+    margin-top: 10%;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+img {
+    width: 100%;
+    display: block; 
+}
+
+input[type="radio"] {
+    display: none;
+}
+@keyframes slideshow {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(0); }
+    30% { transform: translateX(-100%); }
+    55% { transform: translateX(-100%); }
+    60% { transform: translateX(-200%); }
+    85% { transform: translateX(-200%); }
+    90% { transform: translateX(-300%); }
+    100% { transform: translateX(-300%); }
+}
+#slide1:checked ~ .slides {
+    animation: slideshow 12s infinite;
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slides {
+    transform: translateX(-300%);
+}
+.indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.indicators label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#slide1:checked ~ .indicators label[for="slide1"],
+#slide2:checked ~ .indicators label[for="slide2"],
+#slide3:checked ~ .indicators label[for="slide3"],
+#slide4:checked ~ .indicators label[for="slide4"] {
+    background-color: #717171; 
+}
+.about-section {
+    position: relative;
+    height: 800px; 
+    background-image: url('../img/aboutus.avif'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+    margin-top: 187px;
+}
+
+.about-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.about-overlay h2 {
+    font-size: 10vh; 
+    margin-bottom: 5px;
+}
+
+.about-overlay p {
+    max-width: 600px; 
+    font-size: 18px;
+    margin-bottom: 80px;
+    line-height: 25px;
+}
+
+
